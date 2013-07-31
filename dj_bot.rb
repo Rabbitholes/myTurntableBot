@@ -20,9 +20,17 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do  |c|
   on :user_spoke do |message|
     if (message.content == "mine")
       homie_id = message.sender.id.to_s
+      puts "092340197823490812"
+      puts "092340197823490812"
+      puts
+      puts homie_id
+      puts
+      puts "092340197823490812"
+      puts "092340197823490812"
+
       #room.say(@@homies.to_s)
       if (@@homies.has_key?(homie_id))
-        room.say("Bot has voted #{@@homies[homie_id].to_i} times for '#{song.sender.name.to_s}'")
+        room.say("Bot has voted #{@@homies[homie_id].to_i} times for '#{message.sender.name.to_s}'")
       else
         room.say("Sorry homie... we don't have any vote information for you.")
       end
