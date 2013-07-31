@@ -1,0 +1,54 @@
+#!/usr/bin/env ruby
+require 'turntabler'
+
+# Credentials
+EMAIL = 'champion08@gmail.com'
+PASSWORD = 'Rabbit~15t'
+ROOM = '51f920faeb35c10a6c3a1f97' # ID only
+
+TT.run(EMAIL, PASSWORD, :room => ROOM) do  |c|
+  room.say("DJ_Bot (BETA). This bot is going to get you lots of points")
+
+  vote_count = 0
+  homies = {}
+
+  c.room.become_dj
+  room.say("DJ_Bot has become a dj!!!")
+
+  on :user_spoke do |message|
+    if (message.content == "mine")
+      homie_id = message.sender.id.to_s
+      room.say(homies.to_s)
+      if (homies.has_key?(homie_id))
+        room.say("Bot has voted #{homies[homie_id].to_i} times for '#{song.sender.name.to_s}'")
+      else
+        room.say("Sorry homie... we don't have any vote information for you.")
+      end
+    end
+
+    if (message.content == "bot-votes")
+      room.say("Total_Votes => #{vote_count}")
+
+
+
+    if (message.content == "force-bot-vote")
+      room.say("Total_Votes => #{vote_count}")
+
+      c.current_song.vote
+
+      room.say("i may have...check your logs rabbit")
+    end
+  end
+
+  on :song_started do |song|
+    song.vote
+    homie_id = song.played_by.id.to_s
+    room.say("this is for testing #{homie_id}")
+    if (homies.has_key?(homie_id))
+      homies[homie_id] = homies[homie_id].to_i + 1
+    end
+    vote_count = vote_count + 1
+    room.say("I voted! Total_Votes => #{vote_count}")
+  end
+
+end
