@@ -686,6 +686,11 @@ puts "#{@@bot.getName} is now online. (#{@@bot.getVersion})"
 TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   room.say("#{@@bot.getName} is now online. (#{@@bot.getVersion})")
 
+
+  c.room.become_dj
+  room.say("DJ_Bot has become a dj!!!")
+
+
   # Laod Mods/Listeners
   room.moderators.each{
     |m|
@@ -699,9 +704,24 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   #room.say("Mods = #{mods}")
 
   on :user_spoke do |message|
-    @@last_activity[message.sender.id] = Time.now
+    #@@last_activity[message.sender.id] = Time.now
+    puts "speak"
+    puts "speak"
+    puts "speak"
+    puts "speak"
+    puts "speak"
+    puts "speak"
+    puts "speak"
+    puts "speak"
+    puts "speak"
     if(@@bot.getMessageProcess())
 
+      puts "hmmm"
+      puts "hmmm"
+      puts "hmmm"
+      puts "hmmm"
+      puts "hmmm"
+      puts "hmmm"
       if (message.content == "force-bot-vote")
 
         room.say("bot is voting")
@@ -775,14 +795,32 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         end
 
       elsif (message.content == "tigers-blood")
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
+        puts "start kuicking"
         if (message.sender.name == "dr mundo")
-          room.say("and so it begins")
+          rando = 10.times.map{ 20 + Random.rand(11) }[0]
+          room.say("and so it begins #{rando}")
           room.say("magic-booter")
         end
       elsif (message.content == "magic-boot")
         if (message.sender.name == "Rabbitholes")
+
+          begin
+            c.room.current_song.vote
+          rescue Exception => e
+            room.say("wat")
+          end
           #room.say("attempting to make us all have massive amounts of points")
-          room.say("#winning")
+
+          rando = 10.times.map{ 20 + Random.rand(11) }[0]
+          room.say("#winning #{rando}")
           djName = room.current_dj.name.to_s
           dj = room.current_dj
           room.say("#{djName} ... you'll thank me later!!")

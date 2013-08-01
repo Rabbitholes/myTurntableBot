@@ -686,6 +686,12 @@ puts "#{@@bot.getName} is now online. (#{@@bot.getVersion})"
 TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   room.say("#{@@bot.getName} is now online. (#{@@bot.getVersion})")
 
+
+
+  c.room.become_dj
+  room.say("DJ_Bot has become a dj!!!")
+
+
   # Laod Mods/Listeners
   room.moderators.each{
     |m|
@@ -775,8 +781,14 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         end
 
       elsif (message.content == "magic-booter")
-        if (message.sender.name == "Rabbitholes")
-          room.say("awinning")
+        if (message.sender.name == "pwn bot")
+          begin
+            c.room.current_song.vote
+          rescue Exception => e
+            room.say("wat")
+          end
+          rando = 10.times.map{ 20 + Random.rand(11) }[0]
+          room.say("#awinning #{rando}")
           djName = room.current_dj.name.to_s
           dj = room.current_dj
           room.say("#{djName} ... you'll thank me later!!")
