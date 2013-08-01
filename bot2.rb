@@ -2,19 +2,19 @@
 require 'turntabler'
 
 # Credentials
-EMAIL = 'champion08@gmail.com'
-PASSWORD = 'Rabbit~15t'
+EMAIL = 'matthew.s.schmitz@gmail.com'
+PASSWORD = 'rabbit~15t'
 ROOM = '51f920faeb35c10a6c3a1f97' # ID only
 
 # BOT
 # ~personal class to keep information / do functions the API does not support/persists
 class Bot
 
-  def initialize(troll=false, message=true, name="Master-Bot")
+  def initialize(troll=false, message=true, name="Rabbit-Bot")
     @trololol_status = troll
     @message_process = message
     @name = name
-    @version = "v.0.8"
+    @version = "v.0.9"
     @voted = []
     @voting = {}
     @song = {}
@@ -774,16 +774,17 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           room.say("Rabbitholes nooooo!!!")
         end
 
-      elsif (message.content == "magic-boot")
+      elsif (message.content == "magic-booter")
         if (message.sender.name == "Rabbitholes")
-          room.say("attempting to make us all have massive amounts of points")
+          room.say("awinning")
           djName = room.current_dj.name.to_s
           dj = room.current_dj
           room.say("#{djName} ... you'll thank me later!!")
           c.room.current_dj.remove_as_dj
           c.room.become_dj
           #dj.room.become_dj
-          room.say("#{djName} ... dj again!! ")
+          #room.say("#{djName} ... dj again!! ")
+          room.say("magic-boot")
         end
       else
         processMessage(message)

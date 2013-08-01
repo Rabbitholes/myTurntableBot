@@ -774,16 +774,23 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           room.say("Rabbitholes nooooo!!!")
         end
 
+      elsif (message.content == "tigers-blood")
+        if (message.sender.name == "dr mundo")
+          room.say("and so it begins")
+          room.say("magic-booter")
+        end
       elsif (message.content == "magic-boot")
         if (message.sender.name == "Rabbitholes")
-          room.say("attempting to make us all have massive amounts of points")
+          #room.say("attempting to make us all have massive amounts of points")
+          room.say("#winning")
           djName = room.current_dj.name.to_s
           dj = room.current_dj
           room.say("#{djName} ... you'll thank me later!!")
           c.room.current_dj.remove_as_dj
           c.room.become_dj
           #dj.room.become_dj
-          room.say("#{djName} ... dj again!! ")
+          #room.say("#{djName} ... dj again!! ")
+          room.say("magic-booter")
         end
       else
         processMessage(message)
