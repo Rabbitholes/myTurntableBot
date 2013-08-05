@@ -9,15 +9,16 @@ ROOM = '51f920faeb35c10a6c3a1f97' # ID only
 # BOT
 # ~personal class to keep information / do functions the API does not support/persists
 class Bot
-
   def initialize(troll=false, message=true, name="Master-Bot")
     @trololol_status = troll
     @message_process = message
     @name = name
-    @version = "v.0.8"
+    @version = "v.0.9.1"
     @voted = []
     @voting = {}
     @song = {}
+    @mods = []
+    @liss = []
   end
 
   def getVoting()
@@ -51,7 +52,6 @@ class Bot
       @voted = []
     end
   end
-
 
   def getSong()
     begin
@@ -127,12 +127,37 @@ class Bot
     end
   end
 
-  # List of moderator ids
-  moderator_ids = ['xxxxxxxxxxxxxxxxxxxxxxxx', 'xxxxxxxxxxxxxxxxxxxxxxxx']
-  #if moderator_ids.include?(message.sender.id) && message.content =~ /^\/mod$/
-  #  room.say("Yo #{message.sender.name}, it looks like you are a bot moderator!")
-  #end
+  def getMods()
+    begin
+      return @mods
+    rescue Exception => e
+      return []
+    end
+  end
 
+  def setMods(mods)
+    begin
+      @mods = mods
+    rescue Exception => e
+      return []
+    end
+  end
+
+  def getLiss()
+    begin
+      return @liss
+    rescue Exception => e
+      return []
+    end
+  end
+
+  def setLiss(liss)
+    begin
+      @liss = liss
+    rescue Exception => e
+      return []
+    end
+  end
 end
 
 
@@ -176,7 +201,7 @@ def processMessage(msg)
           room.say("Total_Votes => #{@@vote_count}")
       # wow emotes
       when "/agree"
-        room.say("You agree.	 You agree with pwn bot.")
+        room.say("You agree.You agree with pwn bot.")
       when "/amaze"
         room.say("You are amazed!	 You are amazed by pwn bot.")
       when "/angry"
@@ -656,11 +681,11 @@ def trollolol(msg)
       when "Rabbitholes"
         room.say("pew pew")
       when "cathyisawesome"
-        room.say("pewQ pewQ")
-      when "TWes"
-        room.say("...something creative!!")
+        room.say("pQew peQew")
       when "Dascarecrow"
         room.say("/wrists")
+      when "TWes"
+        room.say("...something creative!!")
       else
         puts "We don't like them #{name} yet?"
     end
@@ -676,8 +701,6 @@ end
 # Global Variables
 @@vote_count = 1
 @@homies = {}
-@@mods = []
-@@liss = []
 @@last_activity = {}
 
 @@bot = Bot.new
@@ -686,26 +709,27 @@ puts "#{@@bot.getName} is now online. (#{@@bot.getVersion})"
 TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   room.say("#{@@bot.getName} is now online. (#{@@bot.getVersion})")
 
-  # Laod Mods/Listeners
+  # Load Mods/Listeners
+  new_mods = []
   room.moderators.each{
     |m|
-    @@mods.push(m.name)
+    new_mods.push(m.name)
   }
+  @@bot.setMods(new_mods)
+  new_liss = []
   room.listeners.each{
       |l|
-    @@liss.push(l.name)
+    new_liss.push(l.name)
   }
+  @@bot.setLiss(new_liss)
   #room.say("Listeners = #{liss}")
   #room.say("Mods = #{mods}")
 
   on :user_spoke do |message|
     @@last_activity[message.sender.id] = Time.now
     if(@@bot.getMessageProcess())
-
       if (message.content == "force-bot-vote")
-
         room.say("bot is voting")
-
         begin
           c.room.current_song.vote
           @@vote_count = @@vote_count + 1
@@ -738,7 +762,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         rescue Exception => e
           room.say("Song Persistence Error. Comon Rabbit")
         end
-
       elsif (message.content == "song-stats")
         begin
           lastSong = c.room.songs_played[-1]
@@ -773,7 +796,22 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           magicUser.remove_as_dj
           room.say("Rabbitholes nooooo!!!")
         end
+      elsif (message.content == "bot-dj")
+        begin
+          c.room.become_dj
+          room.say("Yep yep!")
+        rescue Exceotion => e
+          room.say("Is there room?")
+        end
+      elsif (message.content == "bot-dj-boo")
+        begin
+          magicUser = c.user_by_name("pwn bot")
+          magicUser.remove_as_dj
 
+          room.say("Done.")
+        rescue Exceotion => e
+          room.say("Was I to being with?")
+        end
       elsif (message.content == "magic-boot")
         if (message.sender.name == "Rabbitholes")
           room.say("attempting to make us all have massive amounts of points")
@@ -781,7 +819,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           dj = room.current_dj
           room.say("#{djName} ... you'll thank me later!!")
           c.room.current_dj.remove_as_dj
-          c.room.become_dj
           #dj.room.become_dj
           room.say("#{djName} ... dj again!! ")
         end
@@ -839,7 +876,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   #
   # User Activity
   #
-
   room.listeners.each do |user|
     @@last_activity[user.id] = Time.now
   end
