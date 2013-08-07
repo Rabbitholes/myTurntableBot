@@ -188,7 +188,7 @@ def processMessage(msg)
           room.say(@@bot.toggleTroll())
         end
       when "roll-call"
-        room.say("Song's Current Voters - #{@@bot.getVoted.to_s}")
+        #room.say("Song's Current Voters - #{@@bot.getVoted.to_s}")
         room.say("Vote Count = #{@@bot.getVoted.length}")
       when "mine"
           homie_id = msg.sender.id.to_s
@@ -768,7 +768,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
             room.say("~Song Stats~")
             room.say("#{lastSong.title.to_s} by #{lastSong.artist.to_s} via #{lastSong.played_by.name.to_s}")
             room.say("score: #{lastSong.score.to_s}")
-            room.say("voters: #{@@bot.getVoted.to_s}")
+              #room.say("voters: #{@@bot.getVoted.to_s}")
           end
         rescue Exception => e
           room.say("Song Persistence Error. Comon Rabbit")
@@ -848,7 +848,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         room.say("votes: #{@@bot.getVoted.length}")
         #room.say("up_votes: #{lastSong.up_votes_count.to_s}")
         #room.say("down_votes: #{lastSong.down_votes_count.to_s}")
-        room.say("voters: #{@@bot.getVoted.to_s}")
+          #room.say("voters: #{@@bot.getVoted.to_s}")
       end
     rescue Exception => e
       room.say("Song Persistence Error. Comon Rabbit")

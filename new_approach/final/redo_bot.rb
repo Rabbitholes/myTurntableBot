@@ -8,7 +8,8 @@ require 'turntabler'
 @@bot_id = 0
 @@bot_EMAIL = 'default_email'
 @@bot_PASSWORD = 'default_password'
-@@bot_ROOM = '51f920faeb35c10a6c3a1f97'  #'52015fb6eb35c109d87e7ec3'
+#@@bot_ROOM = '51f920faeb35c10a6c3a1f97'
+@@bot_ROOM = '52015fb6eb35c109d87e7ec3'
 
 # Variables
 
