@@ -13,7 +13,7 @@ class Bot
     @trololol_status = troll
     @message_process = message
     @name = name
-    @version = "v.0.9.1"
+    @version = "v.1.0"
     @voted = []
     @voting = {}
     @song = {}
@@ -160,7 +160,6 @@ class Bot
   end
 end
 
-
 def processMessage(msg)
   begin
     puts "processMessage"
@@ -190,12 +189,11 @@ def processMessage(msg)
         end
       when "roll-call"
         room.say("Song's Current Voters - #{@@bot.getVoted.to_s}")
-
-        room.say("Vote-Count = #{@@bot.getVoted.length}")
+        room.say("Vote Count = #{@@bot.getVoted.length}")
       when "mine"
           homie_id = msg.sender.id.to_s
           if (@@homies.has_key?(homie_id))
-            room.say("Bot has voted #{@@homies[homie_id].to_i} times for '#{msg.sender.name.to_s}'")
+            room.say("Master Bot has voted #{@@homies[homie_id].to_i} times for '#{msg.sender.name.to_s}'")
           else
             room.say("Sorry homie... we don't have any vote information for you.")
           end
@@ -698,8 +696,6 @@ def trollolol(msg)
   end
 end
 
-
-
 # Global Variables
 @@vote_count = 1
 @@homies = {}
@@ -710,7 +706,6 @@ puts "#{@@bot.getName} is now online. (#{@@bot.getVersion})"
 
 TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   room.say("#{@@bot.getName} is now online. (#{@@bot.getVersion})")
-
   # Load Mods/Listeners
   new_mods = []
   room.moderators.each{
@@ -731,7 +726,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
     @@last_activity[message.sender.id] = Time.now
     if(@@bot.getMessageProcess())
       if (message.content == "force-bot-vote")
-        room.say("bot is voting")
+        room.say("master bot is voting")
         begin
           c.room.current_song.vote
           @@vote_count = @@vote_count + 1
@@ -809,7 +804,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         begin
           magicUser = c.user_by_name("pwn bot")
           magicUser.remove_as_dj
-
           room.say("Done.")
         rescue Exceotion => e
           room.say("Was I to being with?")
@@ -818,10 +812,8 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         if (message.sender.name == "Rabbitholes")
           room.say("attempting to make us all have massive amounts of points")
           djName = room.current_dj.name.to_s
-          dj = room.current_dj
           room.say("#{djName} ... you'll thank me later!!")
           c.room.current_dj.remove_as_dj
-          #dj.room.become_dj
           room.say("#{djName} ... dj again!! ")
         end
       else
@@ -834,7 +826,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
   end
 
   on :song_started do |song|
-
     # Display Last Songs Results
     begin
       lastSong = c.room.songs_played[-2]
@@ -844,6 +835,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         room.say("~Last Songs Results~")
         room.say("#{lastSong.title.to_s} by #{lastSong.artist.to_s} via #{lastSong.played_by.name.to_s}")
         room.say("score: #{lastSong.score.to_s}")
+        room.say("votes: #{@@bot.getVoted.length}")
         #room.say("up_votes: #{lastSong.up_votes_count.to_s}")
         #room.say("down_votes: #{lastSong.down_votes_count.to_s}")
         room.say("voters: #{@@bot.getVoted.to_s}")
@@ -862,7 +854,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
       @@homies[homie_id] = 1
     end
     @@vote_count = @@vote_count + 1
-    #room.say("I voted! Total_Votes => #{@@vote_count}")
   end
 
   on :user_entered do |user|

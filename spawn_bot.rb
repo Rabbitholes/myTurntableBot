@@ -2,9 +2,10 @@
 require 'turntabler'
 
 # Credentials
-EMAIL = 'champion08@gmail.com'
-PASSWORD = 'Rabbit~15t'
-ROOM = '51f920faeb35c10a6c3a1f97' # ID only
+EMAIL = 'spawnbot@sb.gme'
+PASSWORD = 'spawnbot11'
+#ROOM = '51f920faeb35c10a6c3a1f97' # ID only
+ROOM = '52015fb6eb35c109d87e7ec3'
 
 @@votesAttempted = 0
 @@votesCounted = 0
@@ -28,67 +29,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
 
   @@botId  = c.user.id
 
-
-  room.say("Ultimate_Bot is online!!! (it's going to be like throwing a master-pokeball!!!")
-
-  puts "startstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstartstart"
-
-  def djMagic()
-    begin
-      puts "djMagic"
-      room.say("djMagic")
-      #@@localLog.debug("djMagic")
-      dj_cap = room.dj_capacity
-      djs = room.djs.length
-      openSpots = dj_cap - djs
-      room.say("(#{openSpots}) Open Spots")
-      if (djs <= 2)
-        begin
-          room.say(@@botId)
-          magicUser = room.listener(@@botId)#("pwn bot")
-          if (!magicUser.dj?)
-            room.become_dj
-            room.say("Never Fear. Underdog is here!")
-          else
-            room.say("Uhh houston...we amy have a problem")
-          end
-        rescue Exception => e
-          raise e
-        end
-        begin
-          room.current_dj.remove_as_dj
-        rescue Exception => e
-          raise e
-        end
-      end
-
-      #if (openSpots > 0)
-      #  room.listeners.each{
-      #      |l|
-      #    if (openSpots > 0 && !l.dj?)
-      #      begin
-      #        l.become_dj
-      #        room.say("'#{l.name}' has become a dj.")
-      #      rescue Exception => e
-      #        room.say("djMagic / Listener - #{l.name}")
-      #        room.say(e.to_s)
-      #      end
-      #    end
-      #  }
-      #end
-      puts "djMagic - success"
-      #room.say("djMagic - success")
-      #@@localLog.debug("djMagic - success")
-    rescue Exception => e
-      #@@localLog.debug("djMagic")
-      #@@localLog.debug(e.to_s)
-      room.say("djMagic - failed")
-      room.say(e.to_s)
-      puts "djMagic - failed"
-      puts e.to_s
-      raise e
-    end
-  end
+  room.say("Spawn_Bot is online!!! (it's going to be like throwing a master-pokeball!!!")
 
   def attemptVote(song)
     begin
@@ -107,6 +48,16 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           #@@localLog.debug("Voting - success")
           #room.say("Voting - success")
           puts "Voting - success"
+          begin
+            c.room.current_dj.remove_as_dj
+            room.say("AutoKick - success")
+            puts "AutoKick - success"
+          rescue Exception => e
+            room.say("AutoKick - failed")
+            room.say(e.to_s)
+            puts "AutoKick - failed"
+            puts e.to_s
+          end
         rescue Exception => e
           #@@localLog.debug("Voting - failed")
           #@@localLog.debug(e.to_s)
@@ -166,6 +117,9 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
     #@@localLog.debug("Resetting Switch #{@@voted}")
     #room.say("Resetting Switch #{@@voted}")
     puts "Resetting Switch #{@@voted}"
+    if (song.played_by.name == "spawnbot")
+      c.room.current_dj.remove_as_dj
+    end
     begin
       #room.say("song_started")
       puts "song_started"
@@ -175,7 +129,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
       puts "song_started - success"
       #@@localLog.debug("song_started - success")
       @@fromStart = @@fromStart + 1
-      djMagic()
+      #djMagic()
     rescue Exception => e
       #@@localLog.debug("song_started - failed")
       #@@localLog.debug(e.to_s)
@@ -187,7 +141,6 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
     end
   end
 
-
   on :song_ended do |song|
     begin
       room.say("song_ended")
@@ -198,7 +151,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
       puts "song_ended - success"
       #@@localLog.debug("song_ended - success")
       @@fromEnd = @@fromEnd + 1
-      djMagic()
+      #djMagic()
     rescue Exception => e
       #@@localLog.debug("song_ended - failed")
       #@@localLog.debug(e.to_s)
@@ -221,89 +174,23 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
     end
   end
 
-=begin
-  on :song_started do |song|
+  on :dj_removed do |song|
     begin
-      @@votesAttempted = @@votesAttempted + 1
-      song.vote
-      @@votesCounted = @@votesCounted + 1
-      room.say("I Start Voted! (You are now worthless and I am going to remove you.")
-      c.room.current_dj.remove_as_dj
-      room.say("Now we have no djs. (better add some.")
-      begin
-        dj_cap = c.roomm.dj_capacity
-        djs =  c.room.djs
-        openSpots = dj_cap - djs
-        if (openSpots > 0)
-          room.listeners.each{
-              |l|
-            begin
-              l.room.become_dj
-              room.say(l.name._to_s)
-            rescue Exception => e
-              room.say("failled 2 vote")
-              room.say(e.to_s)
-            end
-          }
-        end
-      rescue Exception => e
-        room.say("failled 3 vote")
-        room.say(e.to_s)
-      end
-
+      room.say("dj_removed")
+      c.room.become_dj
+      #@@localLog.debug("dj_removed - failed")
+      #@@localLog.debug(e.to_s)
+      room.say("dj_removed - success")
+      puts "dj_removed - success"
     rescue Exception => e
-      room.say("failled to vote on song start")
+      #@@localLog.debug("dj_removed - failed")
+      #@@localLog.debug(e.to_s)
+      #room.say("dj_removed - failed")
       room.say(e.to_s)
-      @@votesFailed = @@votesFailed + 1
+      puts "dj_removed - failed"
+      puts e.to_s
     end
   end
-=end
-
-=begin
-  on :song_ended do |song|
-    begin
-      @@votesAttempted = @@votesAttempted + 1
-      song.vote
-      @@votesCounted = @@votesCounted + 1
-      room.say("I End Voted! (You are now worthless and I am going to remove you end.")
-      c.room.current_dj.remove_as_dj
-      room.say("Now we have no djs.")
-    rescue Exception => e
-      room.say("failled to vote on song start")
-      room.say(e.to_s)
-      @@votesFailed = @@votesFailed + 1
-    end
-  end
-=end
-
-=begin
-  on :song_voted do |song| # Song
-    if (song.votes[-1].user.name.to_s == "pwn bot")
-      room.say("I have voted so I should remove you as dj.")
-      c.room.current_dj.remove_as_dj
-      begin
-        dj_cap = c.roomm.dj_capacity
-        djs =  c.room.djs
-        openSpots = dj_cap - djs
-        if (openSpots > 0)
-          room.listeners.each{
-              |l|
-            begin
-              l.room.become_dj
-              room.say(l.name._to_s)
-            rescue Exception => e
-              room.say("ailled add a dj 1")
-              room.say(e.to_s)
-            end
-          }
-        end
-      rescue Exception => e
-        room.say("failled add any djs 1")
-        room.say(e.to_s)
-      end
-    end
-  end
-=end
 
   on :user_spoke do |message|
     rando = 10.times.map{ 20 + Random.rand(11) }[0]
@@ -333,7 +220,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           @@voted = true
           begin
             @@fromManual = @@fromManual + 1
-            djMagic()
+            #djMagic()
           rescue Exception => e
             puts "djMagic - Failed"
             puts e.to_s
@@ -362,9 +249,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         room.say(e.to_s)
       end
     end
-
   end
-
 =begin
   on :message_received do  |msg|
     puts "winnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnnerwinnner"
