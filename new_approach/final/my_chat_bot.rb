@@ -816,6 +816,16 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
           c.room.current_dj.remove_as_dj
           room.say("#{djName} ... dj again!! ")
         end
+      elsif (message.content == "spawn_master")
+        begin
+          puts "spawning_master"
+          room.say("spawning_master")
+          system("bash spawner_runner.sh")
+          room.say("spawned_master")
+          puts "spawned_master"
+        rescue Exception => e
+          puts e.to_s
+        end
       else
         processMessage(message)
       end
