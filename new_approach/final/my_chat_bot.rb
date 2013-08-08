@@ -5,7 +5,7 @@ require 'turntabler'
 EMAIL = 'champion08@gmail.com'
 PASSWORD = 'Rabbit~15t'
 ROOM = '51f920faeb35c10a6c3a1f97' # ID only
-
+#ROOM = '52015fb6eb35c109d87e7ec3' 
 # BOT
 # ~personal class to keep information / do functions the API does not support/persists
 class Bot
