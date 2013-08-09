@@ -2,8 +2,8 @@
 require 'turntabler'
 
 # Credentials
-EMAIL = 'champion08@gmail.com'
-PASSWORD = 'Rabbit~15t'
+EMAIL = 'schmimae@uni.edu'
+PASSWORD = 'rabbit~15t'
 ROOM = '51f920faeb35c10a6c3a1f97' # ID only
 #ROOM = '52015fb6eb35c109d87e7ec3' 
 # BOT
@@ -199,461 +199,467 @@ def processMessage(msg)
           end
       when "bot-votes"
           room.say("Total_Votes => #{@@vote_count}")
+      when "cathy"
+          room.say("^ is awesome")
+      when "babe"
+        if (name == "Rabbitholes")
+          room.say("^'cathy' is awesome")
+        end
       # wow emotes
       when "/agree"
-        room.say("You agree.You agree with pwn bot.")
+        room.say("You agree.You agree with Dr.Mundo.")
       when "/amaze"
-        room.say("You are amazed!	 You are amazed by pwn bot.")
+        room.say("You are amazed!	 You are amazed by Dr.Mundo.")
       when "/angry"
-        room.say("You raise your fist in anger.	 You raise your fist in anger at pwn bot.")
+        room.say("You raise your fist in anger.	 You raise your fist in anger at Dr.Mundo.")
       when "/apologize"
-        room.say("You apologize to everyone. Sorry!	 You apologize to pwn bot. Sorry!")
+        room.say("You apologize to everyone. Sorry!	 You apologize to Dr.Mundo. Sorry!")
       when "/applaud"
         room.say("cheers! horray!")
       when "/applause"
-        room.say("You applaud. Bravo!	 You applaud at pwn bot. Bravo!")
+        room.say("You applaud. Bravo!	 You applaud at Dr.Mundo. Bravo!")
       when "/attacktarget"
-        room.say("You tell everyone to attack something.	 You tell everyone to attack pwn bot.")
+        room.say("You tell everyone to attack something.	 You tell everyone to attack Dr.Mundo.")
       when "/bark"
-        room.say("You bark. Woof woof!	 You bark at pwn bot")
+        room.say("You bark. Woof woof!	 You bark at Dr.Mundo")
       when "/bashful"
-        room.say("You are bashful.	 You are so bashful...too bashful to get pwn bot's attention.")
+        room.say("You are bashful.	 You are so bashful...too bashful to get Dr.Mundo's attention.")
       when "/beckon"
-        room.say("You beckon everyone over to you.	 You beckon pwn bot over.")
+        room.say("You beckon everyone over to you.	 You beckon Dr.Mundo over.")
       when "/beg"
-        room.say("You beg everyone around you. How pathetic.	 You beg pwn bot. How pathetic.")
+        room.say("You beg everyone around you. How pathetic.	 You beg Dr.Mundo. How pathetic.")
       when "/belch"
-        room.say("You let out a loud belch.	 You burp rudely in pwn bot's face.")
+        room.say("You let out a loud belch.	 You burp rudely in Dr.Mundo's face.")
       when "/bite"
-        room.say("You look around for someone to bite.	 You bite pwn bot. Ouch!")
+        room.say("You look around for someone to bite.	 You bite Dr.Mundo. Ouch!")
       when "/bleed"
         room.say("I am actually going to die")
       when "/blood"
         room.say("Blood oozes from your wounds.")
       when "/blink"
-        room.say("You blink your eyes.	 You blink at pwn bot.")
+        room.say("You blink your eyes.	 You blink at Dr.Mundo.")
       when "/blow"
-        room.say("You blow a kiss into the wind.	 You blow a kiss to pwn bot.")
+        room.say("You blow a kiss into the wind.	 You blow a kiss to Dr.Mundo.")
       when "/blush"
-        room.say("You blush.	 You blush at pwn bot.")
+        room.say("You blush.	 You blush at Dr.Mundo.")
       when "/boggle"
-        room.say("You boggle at the situation.	 You boggle at pwn bot.")
+        room.say("You boggle at the situation.	 You boggle at Dr.Mundo.")
       when "/bonk"
-        room.say("You bonk yourself on the noggin. Doh!	 You bonk pwn bot on the noggin. Doh!")
+        room.say("You bonk yourself on the noggin. Doh!	 You bonk Dr.Mundo on the noggin. Doh!")
       when "/bored"
-        room.say("You are overcome with boredom. Oh the drudgery!	 You are terribly bored with pwn bot.")
+        room.say("You are overcome with boredom. Oh the drudgery!	 You are terribly bored with Dr.Mundo.")
       when "/bounce"
-        room.say("You bounce up and down.	 You bounce up and down in front of pwn bot.")
+        room.say("You bounce up and down.	 You bounce up and down in front of Dr.Mundo.")
       when "/bow"
-        room.say("You bow down graciously.	 You bow before pwn bot.")
+        room.say("You bow down graciously.	 You bow before Dr.Mundo.")
       when "/bravo"
-        room.say("You applaud. Bravo!	 You applaud at pwn bot. Bravo!")
+        room.say("You applaud. Bravo!	 You applaud at Dr.Mundo. Bravo!")
       when "/brb"
-        room.say("You let everyone know you'll be right back	 You let pwn bot know you'll be right back.")
+        room.say("You let everyone know you'll be right back	 You let Dr.Mundo know you'll be right back.")
       when "/burp"
-        room.say("You let out a loud belch.	 You burp rudely in pwn bot's face.")
+        room.say("You let out a loud belch.	 You burp rudely in Dr.Mundo's face.")
       when "/bye"
-        room.say("You wave goodbye to everyone. Farewell!	 You wave goodbye to pwn bot. Farewell!")
+        room.say("You wave goodbye to everyone. Farewell!	 You wave goodbye to Dr.Mundo. Farewell!")
       when "/cackle"
-        room.say("You cackle maniacally at the situation.	 You cackle maniacally at pwn bot.")
+        room.say("You cackle maniacally at the situation.	 You cackle maniacally at Dr.Mundo.")
       when "/calm"
-        room.say("You remain calm.	 You try to calm pwn bot down.")
+        room.say("You remain calm.	 You try to calm Dr.Mundo down.")
       when "/cat"
         room.say("meow")
       when "/catty"
-        room.say("You sratch yourself. Ah, much better!	 You scratch pwn bot. How catty!")
+        room.say("You sratch yourself. Ah, much better!	 You scratch Dr.Mundo. How catty!")
       when "/charge"
         room.say("You start to charge.	")
       when "/cheer"
-        room.say("You cheer!	 You cheer at pwn bot.")
+        room.say("You cheer!	 You cheer at Dr.Mundo.")
       when "/chew"
-        room.say("You begin to eat.	 You begin to eat in front of pwn bot.")
+        room.say("You begin to eat.	 You begin to eat in front of Dr.Mundo.")
       when "/chicken"
-        room.say("With arms flapping, you strut around. Cluck, Cluck, Chicken!	 With arms flapping, you strut around pwn bot. Cluck, Cluck, Chicken!")
+        room.say("With arms flapping, you strut around. Cluck, Cluck, Chicken!	 With arms flapping, you strut around Dr.Mundo. Cluck, Cluck, Chicken!")
       when "/chuckle"
-        room.say("You let out a hearty chuckle.	 You chuckle at pwn bot.")
+        room.say("You let out a hearty chuckle.	 You chuckle at Dr.Mundo.")
       when "/clap"
-        room.say("You clap ecitedly.	 You clap ecitedly for pwn bot.")
+        room.say("You clap ecitedly.	 You clap ecitedly for Dr.Mundo.")
       when "/cold"
-        room.say("You let everyone know that you are cold.	 You let pwn bot know that you are cold.")
+        room.say("You let everyone know that you are cold.	 You let Dr.Mundo know that you are cold.")
       when "/comfort"
-        room.say("You need to be comforted.	 You comfort pwn bot.")
+        room.say("You need to be comforted.	 You comfort Dr.Mundo.")
       when "/commend"
-        room.say("You commend everyone on a job well done.	 You commend pwn bot on a job well done.")
+        room.say("You commend everyone on a job well done.	 You commend Dr.Mundo on a job well done.")
       when "/confused"
-        room.say("You are hopelessly confused.	 You look at pwn bot with a confused look.")
+        room.say("You are hopelessly confused.	 You look at Dr.Mundo with a confused look.")
       when "/congrats"
         room.say("Clap. WOOT WOOT!")
       when "/congratulate"
-        room.say("You congratulate everyone around you.	 You congratulate pwn bot.")
+        room.say("You congratulate everyone around you.	 You congratulate Dr.Mundo.")
       when "/cough"
-        room.say("You let out a hacking cough.	 You cough at pwn bot.")
+        room.say("You let out a hacking cough.	 You cough at Dr.Mundo.")
       when "/cower"
-        room.say("You cower in fear.	 You cower in fear at the sight of pwn bot.")
+        room.say("You cower in fear.	 You cower in fear at the sight of Dr.Mundo.")
       when "/crack"
-        room.say("You crack your knuckles.	 You crack your knuckles while staring at pwn bot.")
+        room.say("You crack your knuckles.	 You crack your knuckles while staring at Dr.Mundo.")
       when "/cringe"
-        room.say("You cringe in fear.	 You cringe away from pwn bot.")
+        room.say("You cringe in fear.	 You cringe away from Dr.Mundo.")
       when "/cry"
-        room.say("You cry.	 You cry on pwn bot's shoulder.")
+        room.say("You cry.	 You cry on Dr.Mundo's shoulder.")
       when "/cuddle"
-        room.say("You need to be cuddled.	 You cuddle up against pwn bot.")
+        room.say("You need to be cuddled.	 You cuddle up against Dr.Mundo.")
       when "/curious"
-        room.say("You epress your curiosity to those around you.	 You are curious what pwn bot is up to.")
+        room.say("You epress your curiosity to those around you.	 You are curious what Dr.Mundo is up to.")
       when "/curtsey"
-        room.say("You curtsey.	 You curtsey before pwn bot.")
+        room.say("You curtsey.	 You curtsey before Dr.Mundo.")
       when "/dance"
-        room.say("You burst into dance.	 You dance with pwn bot.")
+        room.say("You burst into dance.	 You dance with Dr.Mundo.")
       when "/disappointed"
         room.say("I am always disapoointed.")
       when "/disappointment"
-        room.say("You frown.	 You frown with disappointment at pwn bot.")
+        room.say("You frown.	 You frown with disappointment at Dr.Mundo.")
       when "/doh"
-        room.say("You bonk yourself on the noggin. Doh!	 You bonk pwn bot on the noggin. Doh!")
+        room.say("You bonk yourself on the noggin. Doh!	 You bonk Dr.Mundo on the noggin. Doh!")
       when "/doom"
-        room.say("You threaten everyone with the wrath of doom.	 You threaten pwn bot with the wrath of doom.")
+        room.say("You threaten everyone with the wrath of doom.	 You threaten Dr.Mundo with the wrath of doom.")
       when "/drink"
-        room.say("You raise a drink in the air before chugging it down. Cheers!	 You raise a drink to pwn bot. Cheers!")
+        room.say("You raise a drink in the air before chugging it down. Cheers!	 You raise a drink to Dr.Mundo. Cheers!")
       when "/drool"
-        room.say("A tendril of drool runs down your lip.	 You look at pwn bot and begin to drool.")
+        room.say("A tendril of drool runs down your lip.	 You look at Dr.Mundo and begin to drool.")
       when "/duck"
-        room.say("You duck for cover.	 You duck behind pwn bot.")
+        room.say("You duck for cover.	 You duck behind Dr.Mundo.")
       when "/eat"
-        room.say("You begin to eat.	 You begin to eat in front of pwn bot.")
+        room.say("You begin to eat.	 You begin to eat in front of Dr.Mundo.")
       when "/ecited"
-        room.say("You talk ecitedly with everyone.	 You talk ecitedly with pwn bot.")
+        room.say("You talk ecitedly with everyone.	 You talk ecitedly with Dr.Mundo.")
       when "/eye"
-        room.say("You cross your eyes.	 You eye pwn bot up and down.")
+        room.say("You cross your eyes.	 You eye Dr.Mundo up and down.")
       when "/facepalm"
-        room.say("You cover your face with your palm.	 You look over at pwn bot and cover your face with your palm.")
+        room.say("You cover your face with your palm.	 You look over at Dr.Mundo and cover your face with your palm.")
       when "/farewell"
-        room.say("You wave goodbye to everyone. Farewell!	 You wave goodbye to pwn bot. Farewell!")
+        room.say("You wave goodbye to everyone. Farewell!	 You wave goodbye to Dr.Mundo. Farewell!")
       when "/fart"
-        room.say("You fart loudly. Whew...what stinks?	 You brush up against pwn bot and fart loudly.")
+        room.say("You fart loudly. Whew...what stinks?	 You brush up against Dr.Mundo and fart loudly.")
       when "/fear"
-        room.say("You cower in fear.	 You cower in fear at the sight of pwn bot.")
+        room.say("You cower in fear.	 You cower in fear at the sight of Dr.Mundo.")
       when "/feast"
-        room.say("You begin to eat.	 You begin to eat in front of pwn bot.")
+        room.say("You begin to eat.	 You begin to eat in front of Dr.Mundo.")
       when "/fidget"
-        room.say("You fidget.	 You fidget impatiently while waiting for pwn bot.")
+        room.say("You fidget.	 You fidget impatiently while waiting for Dr.Mundo.")
       when "/flap"
-        room.say("With arms flapping, you strut around. Cluck, Cluck, Chicken!	 With arms flapping, you strut around pwn bot. Cluck, Cluck, Chicken!")
+        room.say("With arms flapping, you strut around. Cluck, Cluck, Chicken!	 With arms flapping, you strut around Dr.Mundo. Cluck, Cluck, Chicken!")
       when "/flee"
-        room.say("You yell for everyone to flee!	You yell for pwn bot to flee!")
+        room.say("You yell for everyone to flee!	You yell for Dr.Mundo to flee!")
       when "/fle"
-        room.say("You fle your muscles. Oooooh so strong!	 You fle at pwn bot. Oooooh so strong!")
+        room.say("You fle your muscles. Oooooh so strong!	 You fle at Dr.Mundo. Oooooh so strong!")
       when "/flirt"
-        room.say("You flirt.	 You flirt with pwn bot.")
+        room.say("You flirt.	 You flirt with Dr.Mundo.")
       when "/flop"
-        room.say("You flop about helplessly.	 You flop about helplessly around pwn bot.")
+        room.say("You flop about helplessly.	 You flop about helplessly around Dr.Mundo.")
       when "/followme"
-        room.say("You motion for everyone to follow.	 You motion for pwn bot to follow.")
+        room.say("You motion for everyone to follow.	 You motion for Dr.Mundo to follow.")
       when "/food"
-        room.say("You are hungry!	 You are hungry. Maybe pwn bot has some food...")
+        room.say("You are hungry!	 You are hungry. Maybe Dr.Mundo has some food...")
       when "/frown"
-        room.say("You frown.	 You frown with disappointment at pwn bot.")
+        room.say("You frown.	 You frown with disappointment at Dr.Mundo.")
       when "/gasp"
-        room.say("You gasp.	 You gasp at pwn bot.")
+        room.say("You gasp.	 You gasp at Dr.Mundo.")
       when "/gaze"
-        room.say("You gaze off into the distance.	 You gaze eagerly at pwn bot.")
+        room.say("You gaze off into the distance.	 You gaze eagerly at Dr.Mundo.")
       when "/giggle"
-        room.say("You giggle.	 You giggle at pwn bot.")
+        room.say("You giggle.	 You giggle at Dr.Mundo.")
       when "/glad"
-        room.say("You are filled with happiness!	 You are very happy with pwn bot!")
+        room.say("You are filled with happiness!	 You are very happy with Dr.Mundo!")
       when "/glare"
-        room.say("You glare angrily.	 You glare angrily at pwn bot.")
+        room.say("You glare angrily.	 You glare angrily at Dr.Mundo.")
       when "/gloat"
-        room.say("You gloat over everyone's misfortune.	 You gloat over pwn bot's misfortune.")
+        room.say("You gloat over everyone's misfortune.	 You gloat over Dr.Mundo's misfortune.")
       when "/golfclap"
-        room.say("You clap half heartedly, clearly unimpressed.	 You clap for pwn bot, clearly unimpressed.")
+        room.say("You clap half heartedly, clearly unimpressed.	 You clap for Dr.Mundo, clearly unimpressed.")
       when "/goodbye"
-        room.say("You wave goodbye to everyone. Farewell!	 You wave goodbye to pwn bot. Farewell!")
+        room.say("You wave goodbye to everyone. Farewell!	 You wave goodbye to Dr.Mundo. Farewell!")
       when "/greet"
         room.say("Hi there mate!")
       when "/greetings"
-        room.say("You greet everyone warmly.	 You greet pwn bot warmly.")
+        room.say("You greet everyone warmly.	 You greet Dr.Mundo warmly.")
       when "/grin"
-        room.say("You grin wickedly.	 You grin wickedly at pwn bot.")
+        room.say("You grin wickedly.	 You grin wickedly at Dr.Mundo.")
       when "/groan"
-        room.say("You begin to groan.	 You look at pwn bot and groan.")
+        room.say("You begin to groan.	 You look at Dr.Mundo and groan.")
       when "/grovel"
-        room.say("You grovel on the ground, wallowing in subservience.	 You grovel before pwn bot like a subservient peon.")
+        room.say("You grovel on the ground, wallowing in subservience.	 You grovel before Dr.Mundo like a subservient peon.")
       when "/growl"
-        room.say("You growl menacingly.	 You growl menacingly at pwn bot.")
+        room.say("You growl menacingly.	 You growl menacingly at Dr.Mundo.")
       when "/guffaw"
-        room.say("You let out a boisterous guffaw!	 You take one look at pwn bot and let out a guffaw!")
+        room.say("You let out a boisterous guffaw!	 You take one look at Dr.Mundo and let out a guffaw!")
       when "/hail"
-        room.say("You hail those around you.	 You hail pwn bot.")
+        room.say("You hail those around you.	 You hail Dr.Mundo.")
       when "/happy"
-        room.say("You are filled with happiness!	 You are very happy with pwn bot!")
+        room.say("You are filled with happiness!	 You are very happy with Dr.Mundo!")
       when "/healme"
         room.say("You call out for healing!	")
       when "/hello"
-        room.say("You greet everyone with a hearty hello!	 You greet pwn bot with a hearty hello!")
+        room.say("You greet everyone with a hearty hello!	 You greet Dr.Mundo with a hearty hello!")
       when "/helpme"
         room.say("You cry out for help!	")
       when "/hi"
-        room.say("You greet everyone with a hearty hello!	 You greet pwn bot with a hearty hello!")
+        room.say("You greet everyone with a hearty hello!	 You greet Dr.Mundo with a hearty hello!")
       when "/highfive"
-        room.say("You put up your hand for a high five.	 You give pwn bot a high five!")
+        room.say("You put up your hand for a high five.	 You give Dr.Mundo a high five!")
       when "/hug"
-        room.say("You need a hug!	 You hug pwn bot.")
+        room.say("You need a hug!	 You hug Dr.Mundo.")
       when "/hungry"
-        room.say("You are hungry!	 You are hungry. Maybe pwn bot has some food...")
+        room.say("You are hungry!	 You are hungry. Maybe Dr.Mundo has some food...")
       when "/impatient"
-        room.say("You fidget.	 You fidget impatiently while waiting for pwn bot.")
+        room.say("You fidget.	 You fidget impatiently while waiting for Dr.Mundo.")
       when "/incoming"
-        room.say("You warn everyone of incoming enemies!	 You point out pwn bot as an incoming enemy!")
+        room.say("You warn everyone of incoming enemies!	 You point out Dr.Mundo as an incoming enemy!")
       when "/insult"
-        room.say("You think everyone around you is a son of a motherless ogre.	 You think pwn bot is the son of a motherless ogre.")
+        room.say("You think everyone around you is a son of a motherless ogre.	 You think Dr.Mundo is the son of a motherless ogre.")
       when "/introduce"
-        room.say("You introduce yourself to everyone.	 You introduce yourself to pwn bot.")
+        room.say("You introduce yourself to everyone.	 You introduce yourself to Dr.Mundo.")
       when "/jk"
-        room.say("You were just kidding!	 You let pwn bot know that you were just kidding!")
+        room.say("You were just kidding!	 You let Dr.Mundo know that you were just kidding!")
       when "/kiss"
-        room.say("You blow a kiss into the wind.	 You blow a kiss to pwn bot.")
+        room.say("You blow a kiss into the wind.	 You blow a kiss to Dr.Mundo.")
       when "/kneel"
-        room.say("You kneel down.	 You kneel before pwn bot.")
+        room.say("You kneel down.	 You kneel before Dr.Mundo.")
       when "/knuckles"
-        room.say("You crack your knuckles.	 You crack your knuckles while staring at pwn bot.")
+        room.say("You crack your knuckles.	 You crack your knuckles while staring at Dr.Mundo.")
       when "/laugh"
-        room.say("You laugh.	 You laugh at pwn bot.")
+        room.say("You laugh.	 You laugh at Dr.Mundo.")
       when "/lavish"
-        room.say("You praise the Light.	 You lavish praise upon pwn bot.")
+        room.say("You praise the Light.	 You lavish praise upon Dr.Mundo.")
       when "/lay"
         room.say("sleepy")
       when "/laydown"
-        room.say("You lie down.	 You lie down before pwn bot.")
+        room.say("You lie down.	 You lie down before Dr.Mundo.")
       when "/lick"
-        room.say("You lick your lips.	 You lick pwn bot.")
+        room.say("You lick your lips.	 You lick Dr.Mundo.")
       when "/lie"
         room.say("These are not the droids you are looking for.")
       when "/liedown"
-        room.say("You lie down.	 You lie down before pwn bot.")
+        room.say("You lie down.	 You lie down before Dr.Mundo.")
       when "/listen"
-        room.say("You are listening!	 You listen intently to pwn bot.")
+        room.say("You are listening!	 You listen intently to Dr.Mundo.")
       when "/lol"
-        room.say("You laugh.	 You laugh at pwn bot.")
+        room.say("You laugh.	 You laugh at Dr.Mundo.")
       when "/lost"
-        room.say("You are hopelessly lost.	 You want pwn bot to know that you are hopelessly lost.")
+        room.say("You are hopelessly lost.	 You want Dr.Mundo to know that you are hopelessly lost.")
       when "/love"
-        room.say("You feel the love.	 You love pwn bot.")
+        room.say("You feel the love.	 You love Dr.Mundo.")
       when "/mad"
-        room.say("You raise your fist in anger.	 You raise your fist in anger at pwn bot.")
+        room.say("You raise your fist in anger.	 You raise your fist in anger at Dr.Mundo.")
       when "/massage"
-        room.say("You need a massage!	 You massage pwn bot's shoulders.")
+        room.say("You need a massage!	 You massage Dr.Mundo's shoulders.")
       when "/moan"
-        room.say("You moan suggestively.	 You moan suggestively at pwn bot.")
+        room.say("You moan suggestively.	 You moan suggestively at Dr.Mundo.")
       when "/mock"
-        room.say("You mock life and all it stands for.	 You mock the foolishness of pwn bot.")
+        room.say("You mock life and all it stands for.	 You mock the foolishness of Dr.Mundo.")
       when "/moo"
-        room.say("Tauren only	 Mooooooooooo.	 You moo at pwn bot. Mooooooooooo.")
+        room.say("Tauren only	 Mooooooooooo.	 You moo at Dr.Mundo. Mooooooooooo.")
       when "/moon"
-        room.say("You drop your trousers and moon everyone.	 You drop your trousers and moon pwn bot.")
+        room.say("You drop your trousers and moon everyone.	 You drop your trousers and moon Dr.Mundo.")
       when "/mountspecial"
         room.say("Rear-up animation for all mounts (including flying). Works only when mounted	")
       when "/mourn"
-        room.say("In quiet contemplation, you mourn the loss of the dead.	 In quiet contemplation, you mourn the death of pwn bot.")
+        room.say("In quiet contemplation, you mourn the loss of the dead.	 In quiet contemplation, you mourn the death of Dr.Mundo.")
       when "/no"
-        room.say("You clearly state, NO.	 You tell pwn bot NO. Not going to happen.")
+        room.say("You clearly state, NO.	 You tell Dr.Mundo NO. Not going to happen.")
       when "/nod"
-        room.say("You nod.	 You nod at pwn bot.")
+        room.say("You nod.	 You nod at Dr.Mundo.")
       when "/nosepick"
-        room.say("With a finger deep in one nostril, you pass the time.	 You pick your nose and show it to pwn bot.")
+        room.say("With a finger deep in one nostril, you pass the time.	 You pick your nose and show it to Dr.Mundo.")
       when "/oom"
         room.say("You announce that you have low mana!")
       when "/openfire"
         room.say("You give the order to open fire.	")
       when "/panic"
-        room.say("You run around in a frenzied state of panic.	 You take one look at pwn bot and panic.")
+        room.say("You run around in a frenzied state of panic.	 You take one look at Dr.Mundo and panic.")
       when "/party"
-        room.say("You raise a drink in the air before chugging it down. Cheers!	 You raise a drink to pwn bot. Cheers!")
+        room.say("You raise a drink in the air before chugging it down. Cheers!	 You raise a drink to Dr.Mundo. Cheers!")
       when "/pat"
-        room.say("You need a pat.	 You gently pat pwn bot.")
+        room.say("You need a pat.	 You gently pat Dr.Mundo.")
       when "/peer"
-        room.say("You peer around, searchingly.	 You peer at pwn bot searchingly.")
+        room.say("You peer around, searchingly.	 You peer at Dr.Mundo searchingly.")
       when "/peon"
-        room.say("You grovel on the ground, wallowing in subservience.	 You grovel before pwn bot like a subservient peon.")
+        room.say("You grovel on the ground, wallowing in subservience.	 You grovel before Dr.Mundo like a subservient peon.")
       when "/pest"
-        room.say("You shoo the measly pests away.	 You shoo pwn bot away. Be gone pest!")
+        room.say("You shoo the measly pests away.	 You shoo Dr.Mundo away. Be gone pest!")
       when "/pick"
-        room.say("With a finger deep in one nostril, you pass the time.	 You pick your nose and show it to pwn bot.")
+        room.say("With a finger deep in one nostril, you pass the time.	 You pick your nose and show it to Dr.Mundo.")
       when "/pity"
-        room.say("You pity those around you.	 You look down upon pwn bot with pity.")
+        room.say("You pity those around you.	 You look down upon Dr.Mundo with pity.")
       when "/pizza"
-        room.say("You are hungry!	 You are hungry. Maybe pwn bot has some food...")
+        room.say("You are hungry!	 You are hungry. Maybe Dr.Mundo has some food...")
       when "/plead"
-        room.say("You drop to your knees and plead in desperation.	 You plead with pwn bot.")
+        room.say("You drop to your knees and plead in desperation.	 You plead with Dr.Mundo.")
       when "/point"
-        room.say("You point over yonder.	 You point at pwn bot.")
+        room.say("You point over yonder.	 You point at Dr.Mundo.")
       when "/poke"
-        room.say("You poke your belly and giggle.	 You poke pwn bot. Hey!")
+        room.say("You poke your belly and giggle.	 You poke Dr.Mundo. Hey!")
       when "/ponder"
-        room.say("You ponder the situation.	 You ponder pwn bot's actions.")
+        room.say("You ponder the situation.	 You ponder Dr.Mundo's actions.")
       when "/pounce"
-        room.say("You pounce out from the shadows.	 You pounce on top of pwn bot.")
+        room.say("You pounce out from the shadows.	 You pounce on top of Dr.Mundo.")
       when "/praise"
-        room.say("You praise the Light.	 You lavish praise upon pwn bot.")
+        room.say("You praise the Light.	 You lavish praise upon Dr.Mundo.")
       when "/pray"
-        room.say("You pray to the Gods.	 You say a prayer for pwn bot.")
+        room.say("You pray to the Gods.	 You say a prayer for Dr.Mundo.")
       when "/purr"
-        room.say("You purr like a kitten.	 You purr at pwn bot.")
+        room.say("You purr like a kitten.	 You purr at Dr.Mundo.")
       when "/puzzled"
-        room.say("You are puzzled. What's going on here?	 You are puzzled by pwn bot.")
+        room.say("You are puzzled. What's going on here?	 You are puzzled by Dr.Mundo.")
       when "/question"
-        room.say("You want to know the meaning of life.	 You question pwn bot.")
+        room.say("You want to know the meaning of life.	 You question Dr.Mundo.")
       when "/raise"
-        room.say("You raise your hand in the air.	 You look at pwn bot and raise your hand.")
+        room.say("You raise your hand in the air.	 You look at Dr.Mundo and raise your hand.")
       when "/rasp"
-        room.say("You make a rude gesture.	 You make a rude gesture at pwn bot.")
+        room.say("You make a rude gesture.	 You make a rude gesture at Dr.Mundo.")
       when "/rdy"
         room.say("yep im ready...pull already")
       when "/ready"
-        room.say("You let everyone know that you are ready!	 You let pwn bot know that you are ready!")
+        room.say("You let everyone know that you are ready!	 You let Dr.Mundo know that you are ready!")
       when "/rear"
-        room.say("You shake your rear.	 You shake your rear at pwn bot.")
+        room.say("You shake your rear.	 You shake your rear at Dr.Mundo.")
       when "/roar"
-        room.say("You roar with bestial vigor. So fierce!	 You roar with bestial vigor at pwn bot. So fierce!")
+        room.say("You roar with bestial vigor. So fierce!	 You roar with bestial vigor at Dr.Mundo. So fierce!")
       when "/rofl"
-        room.say("You roll on the floor laughing.	 You roll on the floor laughing at pwn bot.")
+        room.say("You roll on the floor laughing.	 You roll on the floor laughing at Dr.Mundo.")
       when "/rude"
-        room.say("You make a rude gesture.	 You make a rude gesture at pwn bot.")
+        room.say("You make a rude gesture.	 You make a rude gesture at Dr.Mundo.")
       when "/salute"
-        room.say("You stand at attention and salute.	 You salute pwn bot with respect.")
+        room.say("You stand at attention and salute.	 You salute Dr.Mundo with respect.")
       when "/scared"
-        room.say("You are scared!	 You are scared of pwn bot.")
+        room.say("You are scared!	 You are scared of Dr.Mundo.")
       when "/scratch"
-        room.say("You scratch yourself. Ah, much better!	 You scratch pwn bot. How catty!")
+        room.say("You scratch yourself. Ah, much better!	 You scratch Dr.Mundo. How catty!")
       when "/sey"
-        room.say("You're too sey for your tunic...so sey it hurts.	 You think pwn bot is a sey devil.")
+        room.say("You're too sey for your tunic...so sey it hurts.	 You think Dr.Mundo is a sey devil.")
       when "/shake"
-        room.say("You shake your rear.	 You shake your rear at pwn bot.")
+        room.say("You shake your rear.	 You shake your rear at Dr.Mundo.")
       when "/shimmy"
-        room.say("You shimmy before the masses.	 You shimmy before pwn bot.")
+        room.say("You shimmy before the masses.	 You shimmy before Dr.Mundo.")
       when "/shindig"
-        room.say("You raise a drink in the air before chugging it down. Cheers!	 You raise a drink to pwn bot. Cheers!")
+        room.say("You raise a drink in the air before chugging it down. Cheers!	 You raise a drink to Dr.Mundo. Cheers!")
       when "/shiver"
-        room.say("You shiver in your boots. Chilling!	 You shiver beside pwn bot. Chilling!")
+        room.say("You shiver in your boots. Chilling!	 You shiver beside Dr.Mundo. Chilling!")
       when "/shoo"
-        room.say("You shoo the measly pests away.	 You shoo pwn bot away. Be gone pest!")
+        room.say("You shoo the measly pests away.	 You shoo Dr.Mundo away. Be gone pest!")
       when "/shrug"
-        room.say("You shrug. Who knows?	 You shrug at pwn bot. Who knows?")
+        room.say("You shrug. Who knows?	 You shrug at Dr.Mundo. Who knows?")
       when "/shy"
-        room.say("You smile shyly.	 You smile shyly at pwn bot.")
+        room.say("You smile shyly.	 You smile shyly at Dr.Mundo.")
       when "/sigh"
-        room.say("You let out a long, drawn-out sigh.	 You sigh at pwn bot.")
+        room.say("You let out a long, drawn-out sigh.	 You sigh at Dr.Mundo.")
       when "/silly"
-        room.say("You tell a joke.	 You tell pwn bot a joke.")
+        room.say("You tell a joke.	 You tell Dr.Mundo a joke.")
       when "/slap"
-        room.say("You slap yourself across the face. Ouch!	 You slap pwn bot across the face. Ouch!")
+        room.say("You slap yourself across the face. Ouch!	 You slap Dr.Mundo across the face. Ouch!")
       when "/sleep"
         room.say("You fall asleep. Zzzzzzz.	 You fall asleep. Zzzzzzz.")
       when "/smell"
-        room.say("You smell the air around you. Wow, someone stinks!	 You smell pwn bot. Wow, someone stinks!")
+        room.say("You smell the air around you. Wow, someone stinks!	 You smell Dr.Mundo. Wow, someone stinks!")
       when "/smile"
-        room.say("You smile.	 You smile at pwn bot.")
+        room.say("You smile.	 You smile at Dr.Mundo.")
       when "/smirk"
-        room.say("A sly smirk spreads across your face.	 You smirk slyly at pwn bot.")
+        room.say("A sly smirk spreads across your face.	 You smirk slyly at Dr.Mundo.")
       when "/snarl"
-        room.say("You bare your teeth and snarl.	 You bare your teeth and snarl at pwn bot.")
+        room.say("You bare your teeth and snarl.	 You bare your teeth and snarl at Dr.Mundo.")
       when "/snicker"
-        room.say("You quietly snicker to yourself.	 You snicker at pwn bot.")
+        room.say("You quietly snicker to yourself.	 You snicker at Dr.Mundo.")
       when "/sniff"
-        room.say("You sniff the air around you.	 You sniff pwn bot.")
+        room.say("You sniff the air around you.	 You sniff Dr.Mundo.")
       when "/snub"
-        room.say("You snub all of the lowly peons around you.	 You snub pwn bot.")
+        room.say("You snub all of the lowly peons around you.	 You snub Dr.Mundo.")
       when "/sob"
-        room.say("You cry.	 You cry on pwn bots shoulder.")
+        room.say("You cry.	 You cry on Dr.Mundos shoulder.")
       when "/soothe"
-        room.say("You need to be soothed.	 You soothe pwn bot. There, there...things will be ok.")
+        room.say("You need to be soothed.	 You soothe Dr.Mundo. There, there...things will be ok.")
       when "/sorry"
-        room.say("You apologize to everyone. Sorry!	 You apologize to pwn bot. Sorry!")
+        room.say("You apologize to everyone. Sorry!	 You apologize to Dr.Mundo. Sorry!")
       when "/spit"
-        room.say("You spit on the ground.	 You spit on pwn bot.")
+        room.say("You spit on the ground.	 You spit on Dr.Mundo.")
       when "/spoon"
-        room.say("You need to be cuddled.	 You cuddle up against pwn bot.")
+        room.say("You need to be cuddled.	 You cuddle up against Dr.Mundo.")
       when "/stare"
-        room.say("You stare off into the distance.	 You stare pwn bot down.")
+        room.say("You stare off into the distance.	 You stare Dr.Mundo down.")
       when "/stink"
-        room.say("You smell the air around you. Wow, someone stinks!	 You smell pwn bot. Wow, someone stinks!")
+        room.say("You smell the air around you. Wow, someone stinks!	 You smell Dr.Mundo. Wow, someone stinks!")
       when "/strong"
-        room.say("You fle your muscles. Oooooh so strong!	 You fle at pwn bot. Oooooh so strong!")
+        room.say("You fle your muscles. Oooooh so strong!	 You fle at Dr.Mundo. Oooooh so strong!")
       when "/strut"
-        room.say("With arms flapping, you strut around. Cluck, Cluck, Chicken!	 With arms flapping, you strut around pwn bot. Cluck, Cluck, Chicken!")
+        room.say("With arms flapping, you strut around. Cluck, Cluck, Chicken!	 With arms flapping, you strut around Dr.Mundo. Cluck, Cluck, Chicken!")
       when "/surprised"
-        room.say("You are so surprised!	 You are surprised by pwn bot's actions.")
+        room.say("You are so surprised!	 You are surprised by Dr.Mundo's actions.")
       when "/surrender"
-        room.say("You surrender to your opponents.	 You surrender before pwn bot. Such is the agony of defeat...")
+        room.say("You surrender to your opponents.	 You surrender before Dr.Mundo. Such is the agony of defeat...")
       when "/talk"
-        room.say("You talk to yourself since no one else seems interested	 You want to talk things over with pwn bot")
+        room.say("You talk to yourself since no one else seems interested	 You want to talk things over with Dr.Mundo")
       when "/talke"
-        room.say("You talk ecitedly with everyone	 You talk ecitedly with pwn bot")
+        room.say("You talk ecitedly with everyone	 You talk ecitedly with Dr.Mundo")
       when "/talkq"
-        room.say("You want to know the meaning of life.	 You question pwn bot.")
+        room.say("You want to know the meaning of life.	 You question Dr.Mundo.")
       when "/tap"
-        room.say("You tap your foot. Hurry up already!	 You tap your foot as you wait for pwn bot.")
+        room.say("You tap your foot. Hurry up already!	 You tap your foot as you wait for Dr.Mundo.")
       when "/taunt"
-        room.say("You taunt everyone around you. Bring it fools!	 You make a taunting gesture at pwn bot. Bring it!")
+        room.say("You taunt everyone around you. Bring it fools!	 You make a taunting gesture at Dr.Mundo. Bring it!")
       when "/tease"
-        room.say("You are such a tease.	 You tease pwn bot.")
+        room.say("You are such a tease.	 You tease Dr.Mundo.")
       when "/thank"
         room.say("Your welcome")
       when "/thanks"
-        room.say("thank everyone around you.	 You thank pwn bot.")
+        room.say("thank everyone around you.	 You thank Dr.Mundo.")
       when "/thirsty"
-        room.say("You are so thirsty. Can anyone spare a drink?	 You let pwn bot know you are thirsty. Spare a drink?")
+        room.say("You are so thirsty. Can anyone spare a drink?	 You let Dr.Mundo know you are thirsty. Spare a drink?")
       when "/threat"
         room.say("Better not in today's times.")
       when "/threaten"
-        room.say("I will squash you into jelly! You threaten everyone with the wrath of doom.	 You threaten pwn bot with the wrath of doom.")
+        room.say("I will squash you into jelly! You threaten everyone with the wrath of doom.	 You threaten Dr.Mundo with the wrath of doom.")
       when "/tickle"
-        room.say("You want to be tickled. Hee hee!	 You tickle pwn bot. Hee hee!")
+        room.say("You want to be tickled. Hee hee!	 You tickle Dr.Mundo. Hee hee!")
       when "/tired"
-        room.say("You let everyone know that you are tired.	 You let pwn bot know that you are tired.")
+        room.say("You let everyone know that you are tired.	 You let Dr.Mundo know that you are tired.")
       when "/train"
         room.say(Choo Choo Train" animation and sound	")
       when "/ty"
-        room.say("You thank everyone around you.	 You thank pwn bot.")
+        room.say("You thank everyone around you.	 You thank Dr.Mundo.")
       when "/veto"
-        room.say("You veto the motion on the floor.	 You veto pwn bot's motion.")
+        room.say("You veto the motion on the floor.	 You veto Dr.Mundo's motion.")
       when "/victory"
-        room.say("You bask in the glory of victory.	 You bask in the glory of victory with pwn bot.")
+        room.say("You bask in the glory of victory.	 You bask in the glory of victory with Dr.Mundo.")
       when "/violin"
-        room.say("You begin to play the world's smallest violin.	 You play the world's smallest violin for pwn bot.")
+        room.say("You begin to play the world's smallest violin.	 You play the world's smallest violin for Dr.Mundo.")
       when "/volunteer"
-        room.say("You raise your hand in the air.	 You look at pwn bot and raise your hand.")
+        room.say("You raise your hand in the air.	 You look at Dr.Mundo and raise your hand.")
       when "/wait"
-        room.say("You ask everyone to wait.	pwn bot asks pwn bot to wait.")
+        room.say("You ask everyone to wait.	Dr.Mundo asks Dr.Mundo to wait.")
       when "/wave"
-        room.say("You beckon everyone over to you.	 You wave at pwn bot.")
+        room.say("You beckon everyone over to you.	 You wave at Dr.Mundo.")
       when "/weep"
-        room.say("You cry.	 You cry on pwn bot's shoulder.")
+        room.say("You cry.	 You cry on Dr.Mundo's shoulder.")
       when "/welcome"
-        room.say("You welcome everyone.	 You welcome pwn bot.")
+        room.say("You welcome everyone.	 You welcome Dr.Mundo.")
       when "/whine"
-        room.say("You whine pathetically.	 You whine pathetically at pwn bot.")
+        room.say("You whine pathetically.	 You whine pathetically at Dr.Mundo.")
       when "/whistle"
-        room.say("You let forth a sharp whistle.	 You whistle at pwn bot.")
+        room.say("You let forth a sharp whistle.	 You whistle at Dr.Mundo.")
       when "/wicked"
         room.say("mhuhahaha")
       when "/wickedly"
-        room.say("You grin wickedly.	 You grin wickedly at pwn bot.")
+        room.say("You grin wickedly.	 You grin wickedly at Dr.Mundo.")
       when "/wink"
-        room.say("You wink slyly.	 You wink slyly at pwn bot.")
+        room.say("You wink slyly.	 You wink slyly at Dr.Mundo.")
       when "/woot"
-        room.say("You cheer!	 You cheer at pwn bot.")
+        room.say("You cheer!	 You cheer at Dr.Mundo.")
       when "/work"
-        room.say("You begin to work.	 You work with pwn bot.")
+        room.say("You begin to work.	 You work with Dr.Mundo.")
       when "/wrath"
-        room.say("You threaten everyone with the wrath of doom.	 You threaten pwn bot with the wrath of doom.")
+        room.say("You threaten everyone with the wrath of doom.	 You threaten Dr.Mundo with the wrath of doom.")
       when "/yawn"
-        room.say("You yawn sleepily.	 You yawn sleepily at pwn bot.")
+        room.say("You yawn sleepily.	 You yawn sleepily at Dr.Mundo.")
       when "/yay"
-        room.say("You are filled with happiness!	 You are very happy with pwn bot!")
+        room.say("You are filled with happiness!	 You are very happy with Dr.Mundo!")
       when "/yes"
-        room.say("You nod.	 You nod at pwn bot.")
+        room.say("You nod.	 You nod at Dr.Mundo.")
       when "/yw"
-        room.say("You were happy to help.	 You were happy to help pwn bot.")
+        room.say("You were happy to help.	 You were happy to help Dr.Mundo.")
       else
         if (text.include?("define"))   #=~ /^\/define/)
           room.say("Chuckles playing the d-e-f-i-n-e game again?!")
@@ -728,7 +734,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
       if (message.content == "force-bot-vote")
         room.say("master bot is voting")
         begin
-          c.room.current_song.vote
+          #c.room.current_song.vote
           @@vote_count = @@vote_count + 1
           homie_id = c.room.current_song.played_by.id.to_s
           if (@@homies.has_key?(homie_id))
@@ -802,7 +808,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
         end
       elsif (message.content == "bot-dj-boo")
         begin
-          magicUser = c.user_by_name("pwn bot")
+          magicUser = c.user_by_name("Dr.Mundo")
           magicUser.remove_as_dj
           room.say("Done.")
         rescue Exceotion => e
@@ -856,7 +862,7 @@ TT.run(EMAIL, PASSWORD, :room => ROOM) do |c|
     @@bot.setVoted([])
 
     # Vote for New Song
-    song.vote
+    #song.vote
     homie_id = song.played_by.id.to_s
     if (@@homies.has_key?(homie_id))
       @@homies[homie_id] = @@homies[homie_id].to_i + 1

@@ -17,6 +17,8 @@ require 'turntabler'
 @@votesCounted = 0
 @@votesFailed = 0
 
+@@control = false
+
 @@modInt = 0
 
 # Gather Bot Id & Insert
@@ -48,11 +50,16 @@ TT.run(@@bot_EMAIL, @@bot_PASSWORD, :room => @@bot_ROOM) do |c|
         #room.say(av)
         #}
     
-  def attemptVote(song)
+  def attemptVote(song, direction="up")
     begin
+    
       @@votesAttempted = @@votesAttempted + 1
       puts "Voting"
-      song.vote
+      if(direction == "down")
+          song.vote(:down)
+      else
+          song.vote
+      end
       puts "Voting - success"
       @@votesCounted = @@votesCounted + 1
     rescue Exception => e
@@ -92,29 +99,44 @@ TT.run(@@bot_EMAIL, @@bot_PASSWORD, :room => @@bot_ROOM) do |c|
       room.say("failed #{@@votesFailed}")
     end
 
-    if (message.content == "room_capacity")
-      room.say(room.listener_capacity.to_s)
+    if (message.content == "one-ring-to-rule-them-all")
+        if (message.sender.name.to_s == "Rabbitholes" || message.sender.name.to_s == "cathyisawesome")
+            if (@@control)
+                @@control = false
+                #return "The power must've been to great..."
+            else
+                @@control = true
+                #return "...And he does not share power."
+            end
+        end
     end
 
+    if (!@@control)
+        if (message.content == "spawn-vote")
+          begin
+            attemptVote(room.current_song)
+          rescue Exception => e
+            puts e
+          end
+        end
 
-    if (message.content == "spawn-vote")
-      begin
-        attemptVote(room.current_song)
-      rescue Exception => e
-        puts e
-      end
-    end
-
-    if (message.content == "spawn-vote #{@@modInt}")
-      begin
-        attemptVote(room.current_song)
-      rescue Exception => e
-        puts e
-      end
-    end
-   # else
-   #	if(message.content.include?("spawn-vote")
-   # end
+        if (message.content == "spawn-vote #{@@modInt}")
+          begin
+            attemptVote(room.current_song)
+          rescue Exception => e
+            puts e
+          end
+        end
+    end    
   end
+    on :song_voted do |song|
+        if (@@control)
+            if (song.votes[-1].user.name.to_s == "Rabbitholes" || song.votes[-1].user.name.to_s == "cathyisawesome")
+                #room.say(user.name.to_s)
+                #room.say(song.votes[-1].to_s)
+                attemptVote(room.current_song, song.votes[-1].to_s)
+            end
+        end
+    end
 
 end
